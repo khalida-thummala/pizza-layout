@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Domino's Layout</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background-color:#f8f8f8;
+    }
+
+    nav{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:20px 40px;
+        border-bottom:2px solid #ccc;
+        flex-wrap:wrap;
+        background:white;
+    }
+    nav .links{
+        display:flex;
+        gap:25px;
+        cursor:pointer;
+        flex-wrap:wrap;
+    }
+    nav button{
+        background:red;
+        color:white;
+        padding:8px 18px;
+        border:none;
+        border-radius:4px;
+        cursor:pointer;
+    }
+
+    @media(max-width:900px){
+        nav{
+            flex-direction:column;
+            gap:15px;
+            padding:20px;
+        }
+        nav h2{
+            font-size:22px;
+            text-align:center;
+        }
+        nav .links{
+            justify-content:center;
+            gap:15px;
+        }
+        nav button{
+            margin-top:10px;
+            padding:10px 20px;
+        }
+    }
+
+    @media(max-width:500px){
+        nav h2{
+            font-size:18px;
+        }
+        nav .links{
+            flex-direction:column;
+            gap:8px;
+            text-align:center;
+        }
+        nav button{
+            width:100%;
+        }
+    }
+
+    .red-card{
+        background:#e63946;
+        color:white;
+        padding:40px 20px;
+        text-align:center;
+        border-radius:4px;
+        display:flex;
+        flex-direction:column;
+        gap:20px;
+        transition:0.2s;
+    }
+    .red-card:hover{
+        transform:scale(1.03);
+    }
+    .red-card img{
+        width:120px;
+        margin:auto;
+    }
+    .red-card button{
+        border:1px solid white;
+        background:none;
+        color:white;
+        padding:6px 12px;
+        cursor:pointer;
+        border-radius:3px;
+    }
+
+    .white-card{
+        background:white;
+        border:1px solid #ccc;
+        padding:20px;
+        border-radius:4px;
+        text-align:center;
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        transition:0.2s;
+    }
+    .white-card:hover{
+        transform:scale(1.03);
+    }
+    .white-card img{
+        width:80px;
+        margin:auto;
+    }
+    .white-card button{
+        border:none;
+        color:#e63946;
+        background:none;
+        font-weight:bold;
+        cursor:pointer;
+    }
+
+    .top-grid, .mid-grid, .explore-grid {
+        display:grid;
+        gap:20px;
+        padding:30px;
+    }
+    .top-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+    .mid-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+    .explore-grid{
+        grid-template-columns:repeat(4,1fr);
+    }
+
+    @media(max-width:1024px){
+        .top-grid, .mid-grid{
+            grid-template-columns:repeat(2,1fr);
+        }
+        .explore-grid{
+            grid-template-columns:repeat(3,1fr);
+        }
+    }
+
+    @media(max-width:768px){
+        .top-grid, .mid-grid{
+            grid-template-columns:1fr;
+        }
+        .explore-grid{
+            grid-template-columns:repeat(2,1fr);
+        }
+    }
+
+    @media(max-width:480px){
+        .explore-grid{
+            grid-template-columns:1fr;
+        }
+    }
+
+    .bottom{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:40px;
+        flex-wrap:wrap;
+        gap:30px;
+    }
+    .bottom img{
+        width:400px;
+        max-width:100%;
+    }
+    .bottom .right{
+        display:flex;
+        flex-direction:column;
+        gap:15px;
+        max-width:350px;
+    }
+    .bottom .right img{
+        width:200px;
+    }
+
+    h3{
+        padding-left:30px;
+        margin-top:20px;
+    }
+</style>
+
+</head>
+<body>
+
+<nav>
+    <h2>Domino’s Pizza</h2>
+    <div class="links">
+        <p>OUR MENU</p>
+        <p>DOMINO'S STORES</p>
+        <p>GIFT CARD</p>
+        <p>CORPORATE ENQUIRY</p>
+        <p>CONTACT</p>
+    </div>
+    <button>Download App</button>
+</nav>
+
+<h3>Order</h3>
+<div class="top-grid">
+    <div class="red-card">
+        <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png">
+        <h3>VEG PIZZA</h3>
+        <p>A delight for veggie lovers! Choose from our wide range of delicious vegetarian pizzas, it's softer and tastier</p>
+        <button>VIEW ALL</button>
+    </div>
+
+    <div class="red-card">
+        <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png">
+        <h3>OUR MENU</h3>
+        <p>Indulge into mouth-watering taste of Pizza mania range, perfect answer to all your food cravings</p>
+        <button>VIEW ALL</button>
+    </div>
+
+    <div class="red-card">
+        <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png">
+        <h3>NON-VEG PIZZA</h3>
+        <p>Choose your favourite non-veg pizzas from the Domino's Pizza menu. Get fresh non-veg pizza with your choice of crusts & toppings</p>
+        <button>VIEW ALL</button>
+    </div>
+</div>
+
+<div class="mid-grid">
+    <div class="red-card"><img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png"><h3>OUR MENU</h3><p>Indulge into mouth-watering taste of Pizza mania</p><button>VIEW ALL</button></div>
+    <div class="red-card"><img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png"><h3>VEG PIZZA</h3><p>A delight for veggie lovers! Softer and tastier</p><button>VIEW ALL</button></div>
+    <div class="red-card"><img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png"><h3>OUR MENU</h3><p>Choose your favourite pizzas with toppings</p><button>VIEW ALL</button></div>
+</div>
+
+<h3>Explore</h3>
+<div class="explore-grid">
+    <div class="white-card"><img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png"><h3>OUR MENU</h3><p>Explore our range of delicious Pizzas, delivered in 30 minutes</p><button>DISCOVER PIZZA</button></div>
+    <div class="white-card"><img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png"><h3>OUR MENU</h3><p>Explore our range of delicious Pizzas, delivered in 30 minutes</p><button>DISCOVER PIZZA</button></div>
+    <div class="white-card"><img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png"><h3>OUR MENU</h3><p>Explore our range of delicious Pizzas, delivered in 30 minutes</p><button>DISCOVER PIZZA</button></div>
+    <div class="white-card"><img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png"><h3>OUR MENU</h3><p>Explore our range of delicious Pizzas, delivered in 30 minutes</p><button>DISCOVER PIZZA</button></div>
+</div>
+
+<div class="bottom">
+    <img src="https://www.dominos.co.in/assets/new_app_img@2x.png">
+    <div class="right">
+        <h1>Unlock Exclusive Offers</h1>
+        <p>For lightning fast ordering experience download the Domino's app</p>
+        <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%202.47.09%20PM_558991.png">
+        <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%202.47.43%20PM_652243.png">
+    </div>
+</div>
+
+</body>
+</html>
